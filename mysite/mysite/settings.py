@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'ckeditor',
+    'ckeditor_uploader',
     'news.apps.NewsConfig',
 ]
 
@@ -130,12 +132,22 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR,'mysite/static')
+    os.path.join(BASE_DIR, 'mysite/static')
 ]
 
-MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+EMAIL_HOST = 'smtp.ukr.net'
+EMAIL_PORT = 465  # 465 #2525
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+EMAIL_USE_SSL = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
