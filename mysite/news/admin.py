@@ -9,11 +9,11 @@ from .models import News, Category
 
 
 class NewsAdminForm(forms.ModelForm):
-    content = forms.CharField(
-        widget=CKEditorUploadingWidget())  # content переопределять контент в поле добавления новости
+    content = forms.CharField(widget=CKEditorUploadingWidget())  # content переопределять контент в поле добавления новости
 
     class Meta:
         model = News
+        fields = '__all__'
         fields = '__all__'
 
 
