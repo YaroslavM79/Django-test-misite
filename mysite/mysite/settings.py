@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'ckeditor',
     'ckeditor_uploader',
+    'captcha',
     'news.apps.NewsConfig',
 ]
 
@@ -214,5 +215,12 @@ CKEDITOR_CONFIGS = {
             'dialogui',
             'elementspath'
         ]),
+    }
+}
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_cache',
     }
 }
